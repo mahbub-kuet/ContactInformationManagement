@@ -1,0 +1,111 @@
+﻿body{
+	font-family:Tahoma;
+}
+
+ul{
+	list-style:none;
+}
+.formul ul{
+    list-style:none;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+ul input[type="text"]{
+    width:250px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+ul input[type="email"]{
+    width:250px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+ul input[type="submit"]{
+    width:120px;
+    height: 30px;
+    margin:0% 0% 0% 30%;
+    background-color: ghostwhite;
+    color:cornflowerblue;
+
+
+}
+ul textarea{
+    width:250px;
+    text-align: left;
+    margin-bottom: 5px;
+    }
+
+ul label{
+	width:100px;
+	float:left;
+    color:blue;
+}
+#btnSave
+{
+	/*position: relative;
+	left:100px;*/
+}
+#div1{
+    margin:2% 0% 0% 30%;
+    padding: 0;
+    width:40%;
+    background-color: aliceblue;
+    border:1px solid darkslategray;
+}
+
+#frmCadastre{
+
+	margin:0;
+    padding: 0;
+    position:relative;
+
+
+}
+
+#tblList{
+	width:100%;
+	border:solid 1px;
+	text-align:center;
+   	border-collapse:collapse; 
+}
+
+#tblList tbody tr{
+	border:solid 1px;
+	height:30px;
+}
+
+#tblList thead{
+	background:beige;
+}
+
+#div2{
+    margin:10px 0 10px 0;
+    padding: 10px;
+    width:100%;
+
+}
+#div2 label{
+    font-weight: bold;
+    font-size: 18px;
+    color:black;
+    text-decoration: underline;
+}
+#div2 input[type="text"]{
+    float:right;
+    color:blue;
+    height:30px;
+    width:120px;
+    margin-right: 20px;
+
+}
+#div2 input[type="button"]{
+    float:right;
+    color:blue;
+    height:30px;
+    width:100px;
+    margin-right: 20px;
+}
+
+
