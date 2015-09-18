@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-	var selected_index = -1; //Index of the selected list item
+	//var selected_index = -1; //Index of the selected list item
+	//$.app=ContactManagement.getSelectedIndex();
 
 	var tbClients = localStorage.getItem("tbClients");//Retrieve the stored data
 
@@ -39,6 +40,7 @@ $(document).ready(function(){
 		  								 "</tr>");
 		}
   }
+  
 
 	function check_empty()
 	{
@@ -80,11 +82,11 @@ $(document).ready(function(){
 		return true;
 	}
 
-	function Delete(){
-		tbClients.splice(selected_index, 1);
-		localStorage.setItem("tbClients", JSON.stringify(tbClients));
-		//alert("Client deleted.");
-	}
+	// function Delete(){
+	// 	tbClients.splice(selected_index, 1);
+	// 	localStorage.setItem("tbClients", JSON.stringify(tbClients));
+	// 	//alert("Client deleted.");
+	// }
 
 	function List(){		
 		
@@ -98,7 +100,7 @@ $(document).ready(function(){
 										 "	<td>"+cli.Mobile+"</td>" + 
 										 "	<td>"+cli.Email+"</td>" + 
 										 "	<td>"+cli.Address+"</td>" + 
-										  "	<td><img src='edit.png' alt='Edit"+i+"' class='btnEdit'/><img src='delete.png' alt='Delete"+i+"' class='btnDelete'/></td>" + 
+										  "	<td><img src='edit.png' alt='Edit' onclick='app.BtnEdit("+i+")' class='btnEdit'/><img src='delete.png' alt='Delete' onclick='app.BtnDelete("+i+")' class='btnDelete'/></td>" + 
 		  								 "</tr>");
 		}
 	}
@@ -107,8 +109,7 @@ $(document).ready(function(){
 		$("#tblList tbody").html("");
 		
 		for(var i in matchClients){
-			//console.log(i);
-			//console.log(typeof(i));
+			
 			var cli = JSON.parse(matchClients[i]);
 			//console.log(cli);
 		  	$("#tblList tbody").append("<tr>"+									 	
@@ -117,7 +118,7 @@ $(document).ready(function(){
 										 "	<td>"+cli.Mobile+"</td>" + 
 										 "	<td>"+cli.Email+"</td>" + 
 										 "	<td>"+cli.Address+"</td>" + 
-										  "	<td><img src='edit.png' alt='Edit"+i+"' class='btnEdit'/><img src='delete.png' alt='Delete"+i+"' class='btnDelete'/></td>" +
+										  "	<td><img src='edit.png' alt='Edit' onclick='BtnEdit("+i+")' class='btnEdit'/><img src='delete.png' alt='Delete' onclick='BtnDelete("+i+")' class='btnDelete'/></td>" +
 		  								 "</tr>");
 		}
 
@@ -159,24 +160,23 @@ $(document).ready(function(){
 		
 	});
 
-	$(".btnEdit").bind("click", function(){
+	// $(".btnEdit").bind("click", function(){
 
-		//operation = "E";
-		//document.getElementById('abc').style.display = "block";
-		document.getElementById('abc').style.display = "block";
-		selected_index = parseInt($(this).attr("alt").replace("Edit", ""));
-		//console.log(this);
-		//console.log(selected_index);
-		var cli = JSON.parse(tbClients[selected_index]);
-		//console.log(cli);
-		$("#ufname").val(cli.FirstName);
-		$("#ulname").val(cli.LastName);
-		$("#umobile").val(cli.Mobile);
-		$("#uemail").val(cli.Email);
-		$("#uaddress").val(cli.Address);
-		$("#ufname").attr("readonly","readonly");
-		$("#ufname").focus();
-	});
+	// 	//operation = "E";
+	// 	//document.getElementById('abc').style.display = "block";
+	// 	document.getElementById('abc').style.display = "block";
+	// 	selected_index = parseInt($(this).attr("alt").replace("Edit", ""));
+	// 	//console.log(this);
+	// 	//console.log(selected_index);
+	// 	var cli = JSON.parse(tbClients[selected_index]);
+	// 	//console.log(cli);
+	// 	$("#ufname").val(cli.FirstName);
+	// 	$("#ulname").val(cli.LastName);
+	// 	$("#umobile").val(cli.Mobile);
+	// 	$("#uemail").val(cli.Email);
+	// 	$("#uaddress").val(cli.Address);		
+	// 	$("#ufname").focus();
+	// });
 
 
 
@@ -232,15 +232,15 @@ $("#btnUpdate").bind("click", function(){
 		return true;
 	});
 
-$(".btnDelete").bind("click", function(){
-	var result = confirm("Are you absolutely sure you want to delete?");
-	if (result) {
-		selected_index = parseInt($(this).attr("alt").replace("Delete", ""));
-		Delete();
-		window.location.reload();
-	}
+// $(".btnDelete").bind("click", function(){
+// 	var result = confirm("Are you absolutely sure you want to delete?");
+// 	if (result) {
+// 		selected_index = parseInt($(this).attr("alt").replace("Delete", ""));
+// 		Delete();
+// 		window.location.reload();
+// 	}
 
-	});
+// 	});
 
 
 
