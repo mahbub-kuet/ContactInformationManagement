@@ -2,19 +2,16 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>	
-	<script type="text/javascript" src="bootstrap.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-	<script type="text/javascript" src="functions.js"></script>
 	
-
-
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+	<script type="text/javascript" src="functions.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link href="popupcss.css" rel="stylesheet">
 </head>
 <body>
 <div id="div1">
-	<form id="frmCadastre">
+	<form id="AddContactForm">
 		<ul class="formul">
 			<li>
 				<label for="fname">First Name:</label>
@@ -39,7 +36,7 @@
 			</li>
 
 			<li>
-				<input type="submit" value=" Add new contact " onsubmit="Add();return false;" id="btnSave"/>
+				<input type="button" value=" Add new contact " onclick="AddContact()" id="btnSave"/>
 			</li>
 		</ul>
 	</form>
@@ -48,7 +45,7 @@
    <div id="div2">
    <label> All contacts:</label>
    	<input type="button" value=" Refresh " id="refreshBtn">
-	<input type="button" value=" search " id="searchbtn">
+	<input type="button" value=" search " onclick="Search()">
 	<input type="text" placeholder=" Search by Mobile " id="searchbox">
    </div>
 
@@ -57,7 +54,7 @@
     <!-- Popup Div Starts Here -->
     <div id="popupContact">
 		<!-- Contact Us Form -->
-		<form id="updateform">
+		<!-- <form id="updateform">
 
             <label>First Name:</label>
             <input type="text" id="ufname"  >
@@ -81,7 +78,7 @@
             <input type="button" value=" Update " id="btnUpdate"/>
             <input type="button" value=" Cancel " id="btnCancel"/>
 
-        </form>
+        </form> -->
     </div>
     <!-- Popup Div Ends Here -->
 </div>

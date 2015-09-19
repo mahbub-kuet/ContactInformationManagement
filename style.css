@@ -55,13 +55,10 @@ ul label{
     border:1px solid darkslategray;
 }
 
-#frmCadastre{
-
+#AddContactForm{
 	margin:0;
     padding: 0;
     position:relative;
-
-
 }
 
 #tblList{
