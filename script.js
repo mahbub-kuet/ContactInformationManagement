@@ -7,7 +7,7 @@ if(tbClients == null) //If there is no data, initialize an empty array
 var matchClients = localStorage.getItem("matchClients");//Retrieve the stored data
     matchClients = JSON.parse(matchClients); //Converts string to object
 
-function RenderContactTabel(contactList){   
+var RenderContactTabel=function (contactList){   
     $("#tblList tbody").html("");	
   	for(var i in contactList){			
 			var cli = JSON.parse(contactList[i]);			
@@ -17,21 +17,50 @@ function RenderContactTabel(contactList){
 										 "	<td>"+cli.Mobile+"</td>" + 
 										 "	<td>"+cli.Email+"</td>" + 
 										 "	<td>"+cli.Address+"</td>" + 
-										  "	<td><img src='edit.png' alt='Edit"+i+"' class='btnEdit'/><img src='delete.png' alt='Delete"+i+"' class='btnDelete'/></td>" +
+										 "	<td><img src='edit.png' alt='Edit' onclick='BtnEdit("+i+")' class='btnEdit'/><img src='delete.png' alt='Delete' onclick='BtnDelete("+i+")' class='btnDelete'/></td>" +
 		  								 "</tr>");
 		}
   }
 
 
+function ValidationCheck(formid)
+	{
+		var val=$('#'+formid+' ul li:nth-child(1) input').val();
+		if(val=='' || val==null){
+			$('#'+formid+' ul li:nth-child(1) p').text('* FirstName is required.').css('color','red');			
+			return false;
+		}
+		val=$('#'+formid+' ul li:nth-child(2) input').val();
+		if(val=='' || val==null){
+			$('#'+formid+' ul li:nth-child(2) p').text('* LastName is required.').css('color','red');			
+			return false;
+		}
+
+		val=$('#'+formid+' ul li:nth-child(3) input').val();
+		if(val=='' || val==null){
+			$('#'+formid+' ul li:nth-child(3) p').text('* Mobile is required.').css('color','red');			
+			return false;
+		}
+		val=$('#'+formid+' ul li:nth-child(4) input').val();
+		if(val=='' || val==null){
+			$('#'+formid+' ul li:nth-child(4) p').text('* Email is required.').css('color','red');			
+			return false;
+		}
+		val=$('#'+formid+' textarea').val();
+		if(val=='' || val==null){
+			$('#'+formid+' ul li:nth-child(5) p').text('* Address is required.').css('color','red');		
+			return false;
+		}
+		return true;
+	}	
+
 
 function AddContact(){
 
-		var address=document.getElementById('address').value;
-		if(address=="" || address==null)
-		{		
-			alert(" Address field is required ")
-			return false;
-		}		
+		if(ValidationCheck("addcontactform")!=true){
+			return;	
+		}
+		     
 
 		var client = JSON.stringify({
 			FirstName : $("#fname").val(),
@@ -42,6 +71,9 @@ function AddContact(){
 		});
 		tbClients.push(client);
 		localStorage.setItem("tbClients", JSON.stringify(tbClients));
+		$('#addcontactform input').val("");
+		$('#addcontactform p').text("");		
+		$('#addcontactform textarea').val("");
 		RenderContactTabel(tbClients);
 	}
 

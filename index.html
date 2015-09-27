@@ -17,28 +17,34 @@
 		<ul class="formul">
 			<li>
 				<label for="fname">First Name:</label>
-				<input type="text" id="fname" Required />
+				<input type="text" id="fname"  />
+				<p></p>
 			</li>
 			<li>
 				<label for="lname">Last Name: </label>
-				<input type="text" id="lname" Required />
+				<input type="text" id="lname"  />
+				<p></p>
 			</li>
 			
 			<li>
 				<label for="mobile">Mobile:</label>
-				<input type="text" pattern="[0-9]{11}" id="mobile" Required/>
+				<input type="text" pattern="[0-9]{11}" id="mobile" />
+				<p></p>
 			</li>
 			<li>
 				<label for="Email">Email:</label>
-				<input type="email" id="email" Required/>
+				<input type="email" id="email" />
+				<p></p>
 			</li>
 			<li>
 				<label for="Address">Address:</label>
 				<textarea id="address" ></textarea>
+				<p></p>
 			</li>
 
 			<li>
-				<input type="button" value=" Add new contact " onclick="AddContact()" id="btnSave"/>
+				<button onclick="AddContact()" id="btnSave"> Add New Contact </button>
+				
 			</li>
 		</ul>
 	</form>
