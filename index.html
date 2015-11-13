@@ -1,11 +1,6 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>	
-	
-	<script type="text/javascript" src="functions.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-	
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link href="popupcss.css" rel="stylesheet">
 </head>
@@ -18,33 +13,27 @@
 			<li>
 				<label for="fname">First Name:</label>
 				<input type="text" id="fname"  />
-				<p></p>
 			</li>
 			<li>
 				<label for="lname">Last Name: </label>
-				<input type="text" id="lname"  />
-				<p></p>
+				<input type="text" id="lname"  />				
 			</li>
 			
 			<li>
 				<label for="mobile">Mobile:</label>
-				<input type="text" pattern="[0-9]{11}" id="mobile" />
-				<p></p>
+				<input type="text" pattern="[0-9]{11}" id="mobile" />				
 			</li>
 			<li>
 				<label for="Email">Email:</label>
-				<input type="email" id="email" />
-				<p></p>
+				<input type="email" id="email" />				
 			</li>
 			<li>
 				<label for="Address">Address:</label>
-				<textarea id="address" ></textarea>
-				<p></p>
+				<textarea id="address" ></textarea>				
 			</li>
 
 			<li>
-				<button onclick="AddContact()" id="btnSave"> Add New Contact </button>
-				
+				<button onclick="ContactInfoManagement.addContact()" id="btnSave"> Add New Contact </button>
 			</li>
 		</ul>
 	</form>
@@ -52,7 +41,7 @@
 
     <div id="div2">
         <label> All contacts:</label>
-    	<input type="button" value=" Refresh " id="refreshBtn">
+    	<input type="button" value=" Refresh " id="refreshBtn" onclick={window.location.reload()}>
 	    <input type="button" value=" search " onclick="Search()">
 	    <input type="text" placeholder=" Search by Mobile " id="searchbox">
     </div>
@@ -81,5 +70,8 @@
 	</tbody>
 </table>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
