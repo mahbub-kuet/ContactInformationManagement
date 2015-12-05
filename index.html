@@ -1,77 +1,84 @@
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<link href="popupcss.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="popupcss.css" rel="stylesheet">
 </head>
 
 <body>
-	
-<div id="div1">
-	<form id="AddContactForm">
-		<ul class="formul">
-			<li>
-				<label for="fname">First Name:</label>
-				<input type="text" id="fname"  />
-			</li>
-			<li>
-				<label for="lname">Last Name: </label>
-				<input type="text" id="lname"  />				
-			</li>
-			
-			<li>
-				<label for="mobile">Mobile:</label>
-				<input type="text" pattern="[0-9]{11}" id="mobile" />				
-			</li>
-			<li>
-				<label for="Email">Email:</label>
-				<input type="email" id="email" />				
-			</li>
-			<li>
-				<label for="Address">Address:</label>
-				<textarea id="address" ></textarea>				
-			</li>
 
-			<li>
-				<button onclick="ContactInfoManagement.addContact()" id="btnSave"> Add New Contact </button>
-			</li>
-		</ul>
-	</form>
+<div id="div1">
+    <form id="AddContactForm">
+        <ul class="formul">
+            <li>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname"/>
+                <span class="span" style="display:none;color:red;font-size: small;">* Firstname is required</span>
+            </li>
+            <li>
+                <label for="lname">Last Name: </label>
+                <input type="text" id="lname"/>
+                <span class="span" style="display:none;color:red;font-size: small;">* Lastname is required</span>
+            </li>
+
+            <li>
+                <label for="mobile">Mobile:</label>
+                <input type="text" pattern="[0-9]{11}" id="mobile"/>
+                <span class="span" style="display:none;color:red;font-size: small;">* Mobile is required</span>
+            </li>
+            <li>
+                <label for="Email">Email:</label>
+                <input type="email" id="email"/>
+                <span class="span" style="display:none;color:red;font-size: small;">* Email is required</span>
+            </li>
+            <li>
+                <label for="Address">Address:</label>
+                <textarea id="address"></textarea>
+                <span class="span" style="display:none;color:red;font-size: small;">* Address is required</span>
+            </li>
+
+            <li>
+                <button id="btnSave"> Add New Contact</button>
+            </li>
+        </ul>
+    </form>
 </div>
 
-    <div id="div2">
-        <label> All contacts:</label>
-    	<input type="button" value=" Refresh " id="refreshBtn" onclick={window.location.reload()}>
-	    <input type="button" value=" search " onclick="ContactInfoManagement.searchContact()">
-	    <input type="text" placeholder=" Search by Mobile " id="searchbox">
-    </div>
+<br>
+
+<div id="div2">
+    <label style="color: darkblue"> All contacts:</label>
+    <input type="button" value=" Refresh " id="refreshBtn">
+    <input type="button" value=" search " id="searchBtn">
+    <input type="text" placeholder=" Search by Mobile " id="searchBox">
+</div>
+<br>
 
 
-	<div id="abc">
+<div id="modalDiv">
     <!-- Popup Div Starts Here -->
-       <div id="popupContact">
-		
-       </div>
-    <!-- Popup Div Ends Here -->
+    <div id="popupContact">
+
     </div>
+    <!-- Popup Div Ends Here -->
+</div>
 
 <table id="tblList">
     <thead>
-		<tr>			
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Mobile</th>
-			<th>Email</th>
-			<th>Address </th>
-			<th>Action </th>
-		</tr>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
     </thead>
-	<tbody>
-	</tbody>
+    <tbody>
+    </tbody>
 </table>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
